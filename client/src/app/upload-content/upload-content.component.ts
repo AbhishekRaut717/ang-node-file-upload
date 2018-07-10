@@ -77,13 +77,8 @@ export class UploadContentComponent implements OnInit {
     comicMetaData.comic_author = this.uploadComicMetaData.value.author;
 
     for (let j = 0; j < this.imageArr.length; j++) {
-      const panel = new Panel();
-      panel.date = this.imageArr[j].date;
-      panel.expressions = this.imageArr[j].expressions;
-      panel.orderNo = this.imageArr[j].orderNo;
-
-      console.log('panel ', panel);
-
+      const panel = this.imageArr[j];
+      comicMetaData.panels.push(panel);
     }
 
     console.log('comicMetaData ', comicMetaData);
