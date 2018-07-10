@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Http & Forms
@@ -11,19 +11,27 @@ import { UploadService } from './upload.service';
 
 // toastr
 import { ToastrModule } from 'ngx-toastr';
-
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { AppComponent } from './app.component';
 
+import { AppRoutingModule } from './app-routing.module';
+import { UploadContentComponent } from './upload-content/upload-content.component';
+import { ViewContentComponent } from './view-content/view-content.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UploadContentComponent,
+    ViewContentComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    AppRoutingModule,
+    NgxSpinnerModule
 
   ],
   providers: [UploadService],
