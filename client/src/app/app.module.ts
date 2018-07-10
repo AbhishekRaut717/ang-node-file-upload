@@ -10,7 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { UploadService } from './upload.service';
 
 // toastr
-import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { NgxSpinnerModule } from 'ngx-spinner';
 
 import { AppComponent } from './app.component';
@@ -31,10 +31,12 @@ import { ViewContentComponent } from './view-content/view-content.component';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     AppRoutingModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ReactiveFormsModule
 
   ],
-  providers: [UploadService],
+  providers: [UploadService, ToastrService],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
