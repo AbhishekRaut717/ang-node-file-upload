@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <hr>
-      <form [formGroup]="uploadComicMetaData" >
+      <form [formGroup]="htmlComicData" enctype="multipart/form-data">
         <div class="form-group">
           <input type="text" autocomplete="title" class="form-control form-control-sm"  formControlName="title" placeholder="Enter Comics title" >         
         </div>
@@ -8,21 +8,20 @@
           <input type="text" autocomplete="name" class="form-control form-control-sm" formControlName="author" placeholder="Enter comic author name">
         </div>
         <br>
+        <div class="form-group">
           <input type="file" (change)="handleFileUploadEvent($event)" multiple accept="image/*">
-      </form>
+        </div>
+        </form>
     </div>
 <br>
-<div class="card">
-  <ul *ngFor="let element of uploadComicImages">
-    <li>
-      <a data-toggle="modal" data-target="#myModal" > {{element.name}} </a>
-    </li>
-  </ul>
+<div class="card" *ngFor="let element of uploadComicImages">
+  <div data-toggle="modal" data-target="#myModal" (click)="carryImageToModal(element)" > {{element.name}} </div>
 </div>
 
 <br><hr>
 <button type="submit" (click)="submitComic($event)"> Submit Comic </button>
 
+<button type="submit" (click)="test($event)" > Test </button>
 
 
 
@@ -35,7 +34,7 @@
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
-          <form [formGroup]="paneldata">
+          <form [formGroup]="htmlPanelData">
             <div class="form-group">
                 <label for="orderNo"> Order No.</label>
                 <input type="text" class="form-control form-control-sm" formControlName="orderNo">
@@ -50,3 +49,4 @@
   
     </div>
   </div>
+
