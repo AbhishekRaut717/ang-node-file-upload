@@ -6,7 +6,8 @@ var Panel = mongoose.Schema({
     encoding: String,
     mimetype: String,
     filename: String,
-    size: Number
+    size: Number,
+    data: Buffer
 });
 
 module.exports = mongoose.model('Panel', Panel);

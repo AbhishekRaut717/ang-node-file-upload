@@ -85,10 +85,6 @@ export class UploadContentComponent implements OnInit {
     panelMetadata.expressions = this.htmlPanelData.value.expressions;
     panelMetadata.date = new Date;
     console.log('panelMetadata ', panelMetadata);
-    // this.uploadServ.uploadPanelToServer(panelMetadata);
-    // setTimeout(() => {
-    //   this.toastr.success('Data Added for the panel with Response ID ' + this.uploadServ.resIdOfImg.message);
-    // }, 3000);
   } // ADD PANEL METADATA AND SEND TO SERVER
 
   submitComic(event: any) {
@@ -101,4 +97,5 @@ export class UploadContentComponent implements OnInit {
       comicMetaData.panels.push(panel);
     }
   }
+
 }

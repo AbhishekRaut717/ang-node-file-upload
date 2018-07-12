@@ -2,12 +2,7 @@
 module.exports = function(app)
 {
     var api = require('../controller/panel.api');
-    var multer = require('multer');
-    var upload = multer({
-        dest: '../controller/uploads/'
-    });
+    var multiparty = require('connect-multiparty')();
 
-    
-
-    app.post('/uploadPanel', upload.single('file'), api.uploadImage);
+    app.post('/uploadPanel', multiparty, api.uploadImage);
 }
