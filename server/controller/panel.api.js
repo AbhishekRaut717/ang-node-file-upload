@@ -7,4 +7,14 @@ var MongoClient = require('mongodb').MongoClient;
 exports.uploadImage = function(req, res)
 {
    console.log(req.file);
+   
+   fs.readFile(req.file.path, function(err, data) {
+       if(err) throw err;
+
+       console.log('the data is ', data);
+      // generateObjectFromGff(data);
+       
+   })
+
+
 }

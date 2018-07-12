@@ -5,7 +5,7 @@ var logger = require('morgan');
 var bodyParser = require('body-parser');
 
 
-//var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 
 var app = express();
 const port = process.env.PORT || 7000;
